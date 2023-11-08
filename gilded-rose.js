@@ -28,6 +28,7 @@ export const updateQuality = () => {
       }
     } else {
       if (item.quality < 50) {
+        console.log('item****', item);
         item.quality = item.quality + 1;
         if (item.name == "Backstage passes to a TAFKAL80ETC concert") {
           if (item.sellIn < 11) {
