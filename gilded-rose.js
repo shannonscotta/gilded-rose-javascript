@@ -15,6 +15,7 @@ export class Legendary extends Item {
 export class Ticket extends Item {
   updateQuality() {
     if (this.quality >= 50) return (this.quality = 50);
+    
     switch (true) {
       case this.sellIn <= 0:
         this.quality = 0;
