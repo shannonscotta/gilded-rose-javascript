@@ -69,3 +69,8 @@ items.push(new Legendary("Sulfuras, Hand of Ragnaros", 0, 80));
 items.push(new Ticket("Backstage passes to a TAFKAL80ETC concert", 15, 20));
 items.push(new Conjured("Conjured Mana Cake", 3, 6));
 
+export const updateQuality = () => {
+  for (let item of items) {
+    item.updateQuality();
+  }
+};

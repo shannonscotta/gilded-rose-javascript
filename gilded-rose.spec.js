@@ -7,6 +7,7 @@ import {
   Cheese,
   Conjured,
   items,
+  updateQuality,
 } from "./gilded-rose.js";
 
 describe("updateQuality", () => {
@@ -14,7 +15,7 @@ describe("updateQuality", () => {
     const testItem = new Basic("basic", 5, 3);
     items.push(testItem);
 
-    testItem.updateQuality();
+    updateQuality();
 
     expect(testItem.quality).toBe(2);
     expect(testItem.sellIn).toBe(4);
@@ -24,7 +25,7 @@ describe("updateQuality", () => {
     const testItem = new Basic("basic", -1, 3);
     items.push(testItem);
 
-    testItem.updateQuality();
+    updateQuality();
 
     expect(testItem.quality).toBe(1);
   });
@@ -33,7 +34,7 @@ describe("updateQuality", () => {
     const testItem = new Basic("basic", 1, 0);
     items.push(testItem);
 
-    testItem.updateQuality();
+    updateQuality();
 
     expect(testItem.quality).toBe(0);
   });
@@ -42,7 +43,7 @@ describe("updateQuality", () => {
     const testItem = new Cheese("Aged Brie", 1, 1);
     items.push(testItem);
 
-    testItem.updateQuality();
+    updateQuality();
 
     expect(testItem.quality).toEqual(2);
   });
@@ -55,7 +56,7 @@ describe("updateQuality", () => {
     );
     items.push(testItem);
 
-    testItem.updateQuality();
+    updateQuality();
 
     expect(testItem.quality).toEqual(50);
   });
@@ -64,7 +65,7 @@ describe("updateQuality", () => {
     const testItem = new Legendary("Sulfuras, Hand of Ragnaros", 15, 80);
     items.push(testItem);
 
-    testItem.updateQuality();
+    updateQuality();
 
     expect(testItem.sellIn).toEqual(15);
     expect(testItem.quality).toEqual(80);
@@ -78,7 +79,7 @@ describe("updateQuality", () => {
     );
     items.push(testItem);
 
-    testItem.updateQuality();
+    updateQuality();
 
     expect(testItem.sellIn).toEqual(9);
     expect(testItem.quality).toEqual(12);
@@ -92,7 +93,7 @@ describe("updateQuality", () => {
     );
     items.push(testItem);
 
-    testItem.updateQuality();
+    updateQuality();
 
     expect(testItem.sellIn).toEqual(4);
     expect(testItem.quality).toEqual(13);
@@ -106,7 +107,7 @@ describe("updateQuality", () => {
     );
     items.push(testItem);
 
-    testItem.updateQuality();
+    updateQuality();
 
     expect(testItem.quality).toEqual(0);
   });
@@ -115,7 +116,7 @@ describe("updateQuality", () => {
     const testItem = new Conjured("conjured", 4, 10);
     items.push(testItem);
 
-    testItem.updateQuality();
+    updateQuality();
 
     expect(testItem.quality).toEqual(8);
   });
